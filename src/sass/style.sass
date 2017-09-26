@@ -1,0 +1,504 @@
+@import ./bootstrap.min.scss
+@import ./font-awesome.min.scss
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,800,900')
+
+@font-face
+  font-family: 'FontAwesome'
+  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0')
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg')
+  font-weight: normal
+    font-style: normal
+
+%flex
+  display: flex
+  align-items: center
+@mixin size($height, $width)
+  height: $height
+  width: $width
+
+
+body
+  font-family: 'Rubik',helvetica,sans-serif
+  min-height: 100vh
+  position: relative
+  padding-bottom: 250px
+a, a:hover
+  text-decoration: none
+  color: inherit
+
+$pr-bl: #42a5f5
+$pr-bl2: #1E88E5
+$pr-bl3: #42A5F5
+$pr--bl: #999999
+$red_color: #ff5722
+
+ul, li
+  padding: 0
+  margin: 0
+  list-style: none
+
+.alert a:not(.close):hover
+  text-decoration: underline
+.btn-material
+  position: relative
+  z-index: 1
+  overflow: hidden
+  &::before
+    content: ''
+    border-radius: 50%
+    @include size(300px,300px)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%) scale(0)
+    z-index: -1
+    transition: 1s cubic-bezier(0.1,0,0.3,1)
+  &:hover::before
+    transform: translate(-50%,-50%) scale(1)
+// navbar
+nav
+  background-color: #fff
+  box-shadow: 0 4px 4px transparentize(black, .95)
+  @extend %flex
+  .container
+    position: relative
+  &.landing
+    height: 40px
+  height: 70px
+  .navbar-brand
+    font-size: 20px
+    margin-right: 15px
+    font-weight: 600
+    color: $pr-bl
+    span
+      color: lighten($pr-bl, 10%)
+  i.search-xs
+    background-color: transparent
+    color: $pr-bl
+    font-weight: 900
+    font-size: 20px
+    border: none
+    display: block
+  .menu-trigger
+    position: absolute
+    background-color: #fff
+    z-index: 999
+    width: 350px
+    right: 0
+    top: 80px
+    box-shadow: 0 10px 50px transparentize(black, .8)
+    height: 300px
+    @extend %flex
+    flex-direction: column
+    align-items: flex-start
+    &::before
+      content: ''
+      border: 12px solid transparent
+      border-bottom-color: #fff
+      position: absolute
+      z-index: 999
+      bottom: 100%
+      right: 15px
+    p.notif
+      padding: 0
+      margin: 10px 20px
+      width: 90%
+    > *
+      padding: 10px 20px
+    .notification
+      flex: 1
+      overflow-y: auto
+      padding: 0
+      a
+        @extend %flex
+        transition: .3s
+        padding: 10px 20px
+        background-color: transparentize(#eee, .5)
+        &:hover
+          background-color: #eee
+        &.readed
+          background-color: transparent
+        .user-comment
+          @include size(30px,30px)
+          @extend %flex
+          margin-right: 10px
+        .comment
+          padding: 15px 0
+          flex: 1
+          margin: 0
+          color: #333
+        &:not(:last-child) .comment
+          border-bottom: 1px solid #eee
+    .profile-setting
+      width: 100%
+      font-size: 15px
+      .log-out
+        padding: 7px 0
+        background-color: $red_color
+        color: #fff
+        display: block
+        i
+          width: 20px
+        &::before
+          background-color: darken($red_color, 10%)
+  .nav-collapse
+    @extend %flex
+    justify-content: space-between
+    flex-wrap: nowrap
+    .form-wrapper
+      flex: 1
+      margin-right: 4em
+    form
+      @extend %flex
+      background-color: transparentize(#eee, .6)
+      padding: 20px 15px
+      box-shadow: inset 0 2px 5px transparentize(black, .98)
+      border: none
+      border-radius: 10px
+      overflow: hidden
+      position: relative
+      .btn-form-search
+        background-color: transparent
+        color: $pr-bl
+        font-weight: 900
+        font-size: 20px
+        border: none
+      &:hover, &:active, &:focus
+        box-shadow: inset 0 2px 5px transparentize(black, .95), 0 4px 4px transparentize(black, .95)
+    .select-cat
+      background-color: transparentize(#fff, .5)
+      border-radius: 10 0 0 10px
+      display: block
+      height: 40px
+      padding: 0 20px
+      border: none
+      margin: -20px -15px
+      margin-right: 10px
+      color: #555
+      &:active, &:focus
+        outline: none
+    input.search
+      background: none!important
+      border: none
+      flex: 1
+      color: #555
+      &-webkit-::placeholder
+        color: #aaa
+      &::placeholder
+        color: #aaa
+      &:focus
+        outline: none
+  .user-wrapper
+    width: 200px
+    @extend %flex
+    flex-wrap: wrap
+    justify-content: flex-end
+    .link-profil
+      @extend %flex
+    .user-home
+      margin: 0 10px 0 15px
+      color: $pr-bl
+      font-weight: 400
+      font-size: 18px
+    .btn-dropdown
+      background: none
+      color: #999
+      background: none
+      border: none
+      border-left: 1px solid #eee
+    .ava-wrap
+      @include size(50px,50px)
+      background-color: white
+      position: relative
+      .notif
+        position: absolute
+        top: -2px
+        right: -2px
+        @include size(20px,20px)
+        line-height: 20px
+        text-align: center
+        font-weight: 800
+        color: white
+        font-size: 12px
+        background-color: $pr-bl2
+        box-shadow: 0 2px 4px transparentize(black, .8)
+    .btn-add
+      font-size: 25px
+      margin-right: 10px
+      color: $pr-bl2
+      &:active, &:hover
+        box-shadow: none
+.status-bar, .menu-trigger p.notif
+  position: relative
+  margin-bottom: 20px
+  width: 100%
+  span
+    font-weight: 100
+    font-style: italic
+    color: $pr--bl
+    background-color: #fff
+    position: relative
+    z-index: 99
+    padding-right: 20px
+    display: inline-block
+  &::after
+    content: ''
+    @include size(1px,100%)
+    background-color: lighten($pr--bl, 30%)
+    position: absolute
+    top: 50%
+    left: 0
+    margin-top: -.5px
+.pagination > .active > a
+  background-color: $pr-bl
+section.body
+  padding-top: 30px
+  .btn-add-new
+    background-color: #FF5722
+    width: 80%
+    font-weight: 500
+    font-size: 13px
+    padding: 15px 0
+    box-shadow: 0 2px 2px transparentize(black, .8)
+    text-align: center
+    display: block
+    color: #fff
+    &::before
+      background-color: darken(#FF5722, 10%)
+  .category
+    margin-top: 50px
+    .catHR
+      width: 20px
+      border-width: 2px
+      margin: 10px
+      margin-left: 0
+  .category-label
+    font-size: 14px
+    font-weight: 400
+    color: #bbb
+    margin-bottom: 6px
+    display: block
+  .category-list
+    color: #03A9F4
+    text-transform: uppercase
+    font-weight: 500
+    font-size: 16px
+    line-height: 40px
+    li
+      width: 80%
+      overflow: hidden
+      border-bottom: 1px solid lighten($pr--bl, 30%)
+      &:not(:nth-child(1))
+        padding: 10px 0
+      a
+        @extend %flex
+        justify-content: space-between
+      i
+        text-align: center
+        width: 30px
+    li:nth-child(1) i
+      font-size: 22px
+    li:nth-child(2) i
+      font-size: 30px
+    li:nth-child(3) i
+      font-size: 23px
+    li:nth-child(4) i
+      font-size: 20px
+  .port-wrapper
+    height: 210px
+    box-shadow: 0 2px 53px rgba(0,0,0,.1)
+    border-radius: 10px
+    padding: 10px
+    @extend %flex
+    flex-direction: column
+    margin-bottom: 25px
+    cursor: pointer
+    -webkit-user-select: none
+    user-select: none
+    .port-main
+      flex: 1
+      overflow: hidden
+      @extend %flex
+      align-items: center
+      position: relative
+      figcaption
+        position: absolute
+        width: 100%
+        height: 100%
+        background-color: transparentize(white, .2)
+        overflow: hidden
+        padding: 10px
+        opacity: 0
+        transition: .6s cubic-bezier(0.3,0,0.1,1)
+        > *
+          margin-bottom: 5px
+        h1
+          font-size: 21px
+          margin: 0
+          line-height: 30px
+        small
+          color: $pr-bl
+          display: inline-block
+          margin: 5px 0
+          margin-right: 5px
+          font-style: italic
+          a:hover
+            text-decoration: underline
+        p
+          color: $pr--bl
+        &:hover
+          opacity: 1
+    .action-list
+      height: 30px
+      @extend %flex
+      justify-content: center
+      color: $pr--bl
+      font-size: 15px
+      width: 100%
+      padding: 0 20px
+      padding-top: 10px
+      li
+        display: block
+        margin: 0 10px
+footer
+  background: url('../img/footer-bg.jpg') repeat-x
+  background-position: bottom
+  padding: 90px 0
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  p
+    font-weight: 100
+    color: $pr-bl
+  ul
+    @extend %flex
+    justify-content: center
+    li
+      margin: 0 20px
+      color: mix(mix($pr--bl, $pr-bl, 70%), #fff, 80%)
+      font-size: 29px
+      &.logo
+        height: 60px
+        width: auto
+        img
+          height: 100%
+          width: auto
+
+@media (max-width:992px)
+  .body
+    .page
+      text-align: center
+@media (min-width:768px) and (max-width:992px)
+  nav .nav-collapse form button
+    position: absolute
+    right: 10px
+  section.body
+    .btn-add-new
+      width: 100%
+      white-space: normal
+      padding: 10px
+      line-height: 20px
+
+
+@media (max-width:768px)
+  nav
+    .container
+      margin-left: 0
+      margin-right: 0
+      width: 100%
+    .main
+      justify-content: space-between
+      , &>div
+        display: flex
+        align-items: center
+      .btn-nav
+        background-color: white
+        border-color: #eee
+        border-width: 2px
+        i
+          color: #999
+    .nav-collapse-xs
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 999
+      background-color: transparentize(#333, .5)
+      .wrapper
+        height: 100vh
+        background-color: #fff
+        box-shadow: 2px 0 50px transparentize(black, .8)
+        width: 300px
+        flex-direction: column
+        justify-content: flex-start
+        overflow-y: auto
+        figure.avatar
+          background-color: #eee
+          height: 180px
+          margin-bottom: 30px
+      .user-wrapper
+        justify-content: flex-start
+        padding: 0 20px
+        width: 100%
+        .btn-add
+          order: 1
+          margin-top: 20px
+          background-color: $pr-bl
+          color: #fff
+          font-size: 12px
+          width: 100%
+          display: flex
+          align-items: center
+          justify-content: center
+          text-transform: uppercase
+          i
+            width: 2em
+      .user-home
+        margin: 0
+      .ava-wrap
+        margin-right: 20px
+      .title
+        color: $pr--bl
+    .menu-trigger
+      position: static
+      display: block
+      width: 100%
+      box-shadow: none
+      margin-top: 20px
+      background-color: #f7f7f7
+      padding-top: 2px
+      .notification
+        height: 250px
+        a
+          padding: 0px 15px
+      p.notif
+        span
+          background-color: #f7f7f7
+      .profile-setting
+        margin-top: 30px
+        .log-out
+          font-size: 14px
+          padding: 10px 0
+  section.body
+    .port-wrapper .action-list
+      margin: 7px 0
+    .row-flex-xs
+      display: flex
+      flex-direction: column
+      .catLab
+        order: 1
+    .btn-add-new
+      width: 100%
+    .category-list li
+        width: 100%
+    .category
+      padding: 0 20px
+  footer
+    p
+      font-size: 13px
+    ul li
+      font-size: 21px
+      &.logo
+        height: 40px
