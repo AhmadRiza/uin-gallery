@@ -7,9 +7,9 @@
     <title>UIN Gallery : Tempat share project</title>
     <meta name="description" content="Tempat berbagi project">
     <meta name="keywords" content="big data, uin maliki, uin maulana malik ibrahim malang, teknik informatika">
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,800,900"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,800,900">
     <link rel="stylesheet" href="css/uin-galeri.min.css">
   </head>
   <body>
@@ -35,8 +35,9 @@
           </div>
           <div class="nav-collapse-xs">
             <div class="wrapper">
+              <div class="close-btn visible-xs"><i class="fa fa-close"></i></div>
               <figure class="avatar visible-xs">
-                <img src="" alt="">
+                <img src="img/avatar.jpg" class="img-responsive" alt="UINGALLERY">
               </figure>
               <div class="user-wrapper clearfix">
                 <a href="" class="btn btn-add" title="Upload karya"><i class="fa fa-plus"></i> <span class="visible-xs desc">Tambah karya baru</span></a>
@@ -52,48 +53,50 @@
                 </a>
                 <button type="button" class="btn-dropdown hidden-xs"><b class="caret"></b></button>
               </div>
-              <div class="menu-trigger">
-                <p class="notif"><span>Notifikasi</span></p>
-                <div class="notification">
-                  <a href="#">
-                    <figure class="user-comment">
-                      <img src="img/man.png" class="img-responsive" alt="">
-                    </figure>
-                    <p class="comment"><span class="name">Parto</span> mengomentari karya anda.</p>
-                  </a>
-                  <a href="#">
-                    <figure class="user-comment">
-                      <img src="img/man.png" class="img-responsive" alt="">
-                    </figure>
-                    <p class="comment"><span class="name">Parto</span> mengomentari karya anda.</p>
-                  </a>
-                  <a href="#" class="readed">
-                    <figure class="user-comment">
-                      <img src="img/man.png" class="img-responsive" alt="">
-                    </figure>
-                    <p class="comment"><span class="name">Parto</span> mengomentari karya anda.</p>
-                  </a>
-                  <a href="#" class="readed">
-                    <figure class="user-comment">
-                      <img src="img/man.png" class="img-responsive" alt="">
-                    </figure>
-                    <p class="comment"><span class="name">Parto</span> mengomentari karya anda. Lorem ipsum dolor sit amet.</p>
-                  </a>
-                  <a href="#" class="readed">
-                    <figure class="user-comment">
-                      <img src="img/man.png" class="img-responsive" alt="">
-                    </figure>
-                    <p class="comment"><span class="name">Parto</span> mengomentari karya anda. Lorem ipsum dolor sit amet.</p>
-                  </a>
-                  <a href="#" class="readed">
-                    <figure class="user-comment">
-                      <img src="img/man.png" class="img-responsive" alt="">
-                    </figure>
-                    <p class="comment"><span class="name">Parto</span> mengomentari karya anda. Lorem ipsum dolor sit amet.</p>
-                  </a>
-                </div>
-                <div class="profile-setting">
-                  <a href="#" class="text-center log-out btn-material"><i class="fa fa-sign-out"></i> Log Out</a>
+              <div class="md-wrapper">
+                <div class="menu-trigger">
+                  <p class="notif"><span>Notifikasi</span></p>
+                  <div class="notification">
+                    <a href="#">
+                      <figure class="user-comment">
+                        <img src="img/man.png" class="img-responsive" alt="">
+                      </figure>
+                      <p class="comment"><span class="name">Parto</span> mengomentari karya anda.</p>
+                    </a>
+                    <a href="#">
+                      <figure class="user-comment">
+                        <img src="img/man.png" class="img-responsive" alt="">
+                      </figure>
+                      <p class="comment"><span class="name">Parto</span> mengomentari karya anda.</p>
+                    </a>
+                    <a href="#" class="readed">
+                      <figure class="user-comment">
+                        <img src="img/man.png" class="img-responsive" alt="">
+                      </figure>
+                      <p class="comment"><span class="name">Parto</span> mengomentari karya anda.</p>
+                    </a>
+                    <a href="#" class="readed">
+                      <figure class="user-comment">
+                        <img src="img/man.png" class="img-responsive" alt="">
+                      </figure>
+                      <p class="comment"><span class="name">Parto</span> mengomentari karya anda. Lorem ipsum dolor sit amet.</p>
+                    </a>
+                    <a href="#" class="readed">
+                      <figure class="user-comment">
+                        <img src="img/man.png" class="img-responsive" alt="">
+                      </figure>
+                      <p class="comment"><span class="name">Parto</span> mengomentari karya anda. Lorem ipsum dolor sit amet.</p>
+                    </a>
+                    <a href="#" class="readed">
+                      <figure class="user-comment">
+                        <img src="img/man.png" class="img-responsive" alt="">
+                      </figure>
+                      <p class="comment"><span class="name">Parto</span> mengomentari karya anda. Lorem ipsum dolor sit amet.</p>
+                    </a>
+                  </div>
+                  <div class="profile-setting">
+                    <a href="#" class="text-center log-out btn-material"><i class="fa fa-sign-out"></i> Log Out</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -110,10 +113,10 @@
               <small class="category-label">KATEGORI</small>
               <hr class="catHR">
               <ul class="category-list">
-                <li><a href="">Java <i class="fa fa-coffee"></i></a></li>
+                <li class=""><a href="">Java <i class="fa fa-coffee"></i></a></li>
                 <li><a href="">Mobile <i class="fa fa-mobile"></i></a></li>
                 <li><a href="">Website <i class="fa fa-code"></i></a></li>
-                <li><a href="">Desktop <i class="fa fa-desktop"></i></a></li>
+                <li class="active"><a href="">Desktop <i class="fa fa-desktop"></i></a></li>
                 <li><a href="">Desain <i class="fa fa-american-sign-language-interpreting"></i></a></li>
                 <li><a href="">Robotika <i class="fa fa-cogs"></i></a></li>
               </ul>
@@ -266,10 +269,10 @@
         <li><a href="" title="find us on facebook!"><i class="fa fa-facebook"></i></a></li>
       </ul>
     </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/main.js"></script>
+    <script src="app/jquery.min.js"></script>
+    <script src="app/bootstrap.min.js"></script>
+    <script src="app/wow.min.js"></script>
+    <script src="app/smoothscroll.js"></script>
+    <script src="app/uin-galeri.min.js"></script>
   </body>
 </html>
