@@ -15,4 +15,15 @@ $(document).ready(function() {
   $('.close-btn').click(function() {
     $('.nav-collapse-xs').removeClass('active');
   });
+
+  // navbar
+  var navbar = $('nav form');
+  $('input.search').on('active hover focus', function() {
+    navbar.addClass('activated');
+  }).on('blur', function() {
+    navbar.removeClass('activated');
+  });
+
+  // bootstrap-select
+  $('.bootstrap-select').selectpicker();
 });

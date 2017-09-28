@@ -8,6 +8,7 @@
     <meta name="description" content="Tempat berbagi project">
     <meta name="keywords" content="big data, uin maliki, uin maulana malik ibrahim malang, teknik informatika">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,800,900">
     <link rel="stylesheet" href="css/uin-galeri.min.css">
@@ -24,7 +25,7 @@
         </div>
         <div class="nav-collapse">
           <div class="hidden-xs form-wrapper">
-            <form action="" class="form-control nav-form">
+            <form action="" class="form-control">
               <select class="select-cat" name="">
                 <option value="Karya">Karya</option>
                 <option value="Karya">User</option>
@@ -107,9 +108,19 @@
     <section class="body">
       <div class="container">
         <div class="row row-flex-xs">
-          <div class="col-md-3 col-sm-3 col-xs-12 catLab">
-            <a href="" class="hidden-xs btn btn-lg btn-add-new btn-material"><i class="fa fa-plus"></i> TAMBAH KARYA BARU</a>
-            <div class="category">
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="visible-xs cat-xs">
+              <small class="cat-label-xs">Kategori</small>
+              <select name="" id="" class="bootstrap-select form-control" multiple>
+                <option selected class=""><a href="">Java <i class="fa fa-coffee"></i></a></option>
+                <option selected><a href="">Mobile <i class="fa fa-mobile"></i></a></option>
+                <option selected><a href="">Website <i class="fa fa-code"></i></a></option>
+                <option selected class="active"><a href="">Desktop <i class="fa fa-desktop"></i></a></option>
+                <option selected><a href="">Desain <i class="fa fa-american-sign-language-interpreting"></i></a></option>
+                <option selected><a href="">Robotika <i class="fa fa-cogs"></i></a></option>
+              </select>
+            </div>
+            <div class="category search hidden-xs">
               <small class="category-label">KATEGORI</small>
               <hr class="catHR">
               <ul class="category-list">
@@ -123,11 +134,6 @@
             </div>
           </div>
           <div class="col-md-9 col-sm-9 col-xs-12 infoLab">
-            <div class="alert alert-warning">
-              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <p>Lengkapi <a class="text-primary" href="#">profil anda</a> agar semua orang dapat mengenal anda!</p>
-            </div>
-            <p class="status-bar"><span>Popular</span></p>
             <div class="row">
               <div class="col-md-4 col-sm-6 col-xs-6">
                 <a href="#">
@@ -271,6 +277,7 @@
     </footer>
     <script src="app/jquery.min.js"></script>
     <script src="app/bootstrap.min.js"></script>
+    <script src="app/bootstrap-select.min.js"></script>
     <script src="app/wow.min.js"></script>
     <script src="app/smoothscroll.js"></script>
     <script src="app/uin-galeri.min.js"></script>
